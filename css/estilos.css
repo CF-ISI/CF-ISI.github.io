@@ -2,121 +2,82 @@
   padding: 0px;
   margin: 0px;
 }
-/* Estilos para el encabezado */
-header {
-  background-color: lightgray;
-  text-align: center;
+/* Slider */
+.carousel-item {
+  height: 75vh;
+  min-height: 350px;
+  background: no-repeat center center scroll;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+/* Cursos */
+.card {
+  border: none;
+}
+
+.card-body {
+  background-color: #eee;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   padding: 20px;
+  position: relative;
+  transition: all 0.2s ease-in-out;
 }
 
-/* Estilos para la barra de navegación */
-nav {
-  background-color: darkgray;
-  overflow: hidden;
+.card-body:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
-nav ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
+.card-img-top {
+  border-radius: 5px 5px 0 0;
 }
 
-nav li {
-  float: left;
+.card-title {
+  margin-bottom: 0;
 }
 
-nav a {
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
+.card-title a {
+  color: #333;
+  font-size: 22px;
   text-decoration: none;
 }
 
-nav a:hover {
-  background-color: gray;
+.card-title a:hover {
+  color: #6c757d;
 }
 
-/* Estilos para los formularios de inicio de sesión y registro */
-#login-form, #register-form {
-  background-color: lightgray;
-  padding: 20px;
-  margin: 20px;
-  width: 30%;
+.card-text {
+  color: #6c757d;
+  font-size: 16px;
 }
 
-/* Estilos para el slider de imágenes */
-#slider {
-  width: 50%;
-  margin: 20px auto;
-  text-align: center;
-  position: relative;
+/* Galería */
+.img-fluid {
+  max-width: 100%;
+  height: auto;
 }
 
-.slide {
-  width: 100%;
-  display: none;
+/* Footer */
+footer {
+  color: #fff;
 }
 
-.btn-prev, .btn-next {
-  cursor: pointer;
-  position: absolute;
-  top: 50%;
-  width: auto;
-  margin-top: -22px;
-  padding: 16px;
-  color: white;
-  font-weight: bold;
+footer h4 {
   font-size: 18px;
-  transition: 0.6s ease;
-  border-radius: 0 3px 3px 0;
 }
 
-.btn-next {
-  right: 0;
-  border-radius: 3px 0 0 3px;
+footer a {
+  color: #fff;
 }
 
-.btn-prev:hover, .btn-next:hover {
-  background-color: rgba(0,0,0,0.8);
+footer a:hover {
+  color: #ccc;
+  text-decoration: none;
 }
 
-/* Estilos para la galería de imágenes */
-#galeria {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  margin: 20px;
-}
-
-#galeria img {
-  width: 30%;
-  margin-bottom: 20px;
-  cursor: pointer;
-}
-
-/* Estilos para los anuncios emergentes */
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 1;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgba(0,0,0,0.4);
-}
-
-.modal-content {
-  background-color: white;
-  margin: 20px auto;
-  width: 80%;
-  padding: 20px;
-  border: 1px solid #888;
-}
-
-.close {
-  color: #aaa;
-  
+footer p {
+  font-size: 14px;
 }
