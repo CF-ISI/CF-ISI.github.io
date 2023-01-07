@@ -1,0 +1,118 @@
+/* Estilos para el encabezado */
+header {
+  background-color: lightgray;
+  text-align: center;
+  padding: 20px;
+}
+
+/* Estilos para la barra de navegación */
+nav {
+  background-color: darkgray;
+  overflow: hidden;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav li {
+  float: left;
+}
+
+nav a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+nav a:hover {
+  background-color: gray;
+}
+
+/* Estilos para los formularios de inicio de sesión y registro */
+#login-form, #register-form {
+  background-color: lightgray;
+  padding: 20px;
+  margin: 20px;
+  width: 30%;
+}
+
+/* Estilos para el slider de imágenes */
+#slider {
+  width: 50%;
+  margin: 20px auto;
+  text-align: center;
+  position: relative;
+}
+
+.slide {
+  width: 100%;
+  display: none;
+}
+
+.btn-prev, .btn-next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+}
+
+.btn-next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.btn-prev:hover, .btn-next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Estilos para la galería de imágenes */
+#galeria {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 20px;
+}
+
+#galeria img {
+  width: 30%;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+
+/* Estilos para los anuncios emergentes */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+  background-color: white;
+  margin: 20px auto;
+  width: 80%;
+  padding: 20px;
+  border: 1px solid #888;
+}
+
+.close {
+  color: #aaa;
+  
+}
