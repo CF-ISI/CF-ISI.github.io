@@ -1,68 +1,58 @@
+<!DOCTYPE html>
 <html>
-  <head>
-    <title>Centro Federado de Ingenieria de Sistemas e Informatica</title>
-    <link rel="shortcut icon" href="img/logo.ico">
-    <!--Load the AJAX API-->
-    <script type="text/javascript" src="js/loader.js"></script>
-    <script type="text/javascript">
+<head>
+  <title>Mi Página Web Informativa</title>
+  <link rel="stylesheet" type="text/css" href="estilos.css">
+  <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-database.js"></script>
+  <script src="scripts.js"></script>
+</head>
+<body>
+  <!-- Encabezado -->
+  <header>
+    <h1>Mi Página Web Informativa</h1>
+  </header>
 
-      // Load the Visualization API and the corechart package.
-      google.charts.load('current', {'packages':['corechart']});
+  <!-- Barra de navegación -->
+  <nav>
+    <ul>
+      <li><a href="#">Inicio</a></li>
+      <li><a href="#">Cursos</a></li>
+      <li><a href="#">Galería</a></li>
+      <li><a href="#">Contacto</a></li>
+    </ul>
+  </nav>
 
-      // Set a callback to run when the Google Visualization API is loaded.
-      google.charts.setOnLoadCallback(drawChart);
+  <!-- Formulario de inicio de sesión -->
+  <section id="login-form">
+    <form>
+      <label for="email">Correo electrónico:</label><br>
+      <input type="email" id="email" name="email"><br>
+      <label for="password">Contraseña:</label><br>
+      <input type="password" id="password" name="password"><br><br>
+      <button type="submit" onclick="login()">Iniciar sesión</button>
+    </form> 
+  </section>
 
-      // Callback that creates and populates a data table,
-      // instantiates the pie chart, passes in the data and
-      // draws it.
-      function drawChart() {
+  <!-- Formulario de registro -->
+  <section id="register-form">
+    <form>
+      <label for="email">Correo electrónico:</label><br>
+      <input type="email" id="email" name="email"><br>
+      <label for="password">Contraseña:</label><br>
+      <input type="password" id="password" name="password"><br>
+      <label for="password-confirm">Confirmar contraseña:</label><br>
+      <input type="password" id="password-confirm" name="password-confirm"><br><br>
+      <button type="submit" onclick="register()">Registrarse</button>
+    </form> 
+  </section>
 
-        // Create the data table.
-        var data = new google.visualization.DataTable();
-        data.addColumn('string', 'Topping');
-        data.addColumn('number', 'Slices');
-        data.addRows([
-          ['Boletos de cachimbeada', 3],
-          ['corte de cabello', 1],
-          ['venta de bebidas en cacimbeada', 1]
-        ]);
-
-        // Set chart options
-        var options = {'title':'Recaudacion de Centro Federado',
-                       'width':400,
-                       'height':300};
-
-        // Instantiate and draw our chart, passing in some options.
-        var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
-        chart.draw(data, options);
-      }
-    </script>
-        <script type="text/javascript">
-      google.charts.load('current', {'packages':['table']});
-      google.charts.setOnLoadCallback(drawTable);
-
-      function drawTable() {
-        var data = new google.visualization.DataTable();
-        data.addColumn('string', 'Name');
-        data.addColumn('number', 'Salary');
-        data.addColumn('boolean', 'Full Time Employee');
-        data.addRows([
-          ['Mike',  {v: 10000, f: '$10,000'}, true],
-          ['Jim',   {v:8000,   f: '$8,000'},  false],
-          ['Alice', {v: 12500, f: '$12,500'}, true],
-          ['Bob',   {v: 7000,  f: '$7,000'},  true]
-        ]);
-
-        var table = new google.visualization.Table(document.getElementById('table_div'));
-
-        table.draw(data, {showRowNumber: true, width: '100%', height: '100%'});
-      }
-    </script>
-  </head>
-
-  <body>
-    <!--Div that will hold the pie chart-->
-    <div id="chart_div"></div>
-    <div id="table_div"></div>
+  <!-- Slider de imágenes -->
+  <section id="slider">
+    <img src="imagen1.jpg" alt="Imagen 1" class="slide">
+    <img src="imagen2.jpg" alt="Imagen 2" class="slide">
+    <img src="imagen3.jpg" alt="Imagen 3" class="slide">
+  </section>
   </body>
 </html>
