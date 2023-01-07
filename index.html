@@ -1,58 +1,297 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Mi Página Web Informativa</title>
-  <link rel="stylesheet" type="text/css" href="css/estilos.css">
-  <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-auth.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-database.js"></script>
-  <script src="scripts.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Página Informativa</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <!-- CSS personalizado -->
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <!-- Encabezado -->
-  <header>
-    <h1>Mi Página Web Informativa</h1>
-  </header>
-
-  <!-- Barra de navegación -->
-  <nav>
-    <ul>
-      <li><a href="#">Inicio</a></li>
-      <li><a href="#">Cursos</a></li>
-      <li><a href="#">Galería</a></li>
-      <li><a href="#">Contacto</a></li>
-    </ul>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Mi Página</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Inicio</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Cursos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Galería</a>
+        </li>
+      </ul>
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="#" data-toggle="modal" data-target="#modal-registro">Registrarse</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#" data-toggle="modal" data-target="#modal-login">Iniciar sesión</a>
+        </li>
+      </ul>
+    </div>
   </nav>
-
-  <!-- Formulario de inicio de sesión -->
-  <section id="login-form">
-    <form>
-      <label for="email">Correo electrónico:</label><br>
-      <input type="email" id="email" name="email"><br>
-      <label for="password">Contraseña:</label><br>
-      <input type="password" id="password" name="password"><br><br>
-      <button type="submit" onclick="login()">Iniciar sesión</button>
-    </form> 
-  </section>
-
-  <!-- Formulario de registro -->
-  <section id="register-form">
-    <form>
-      <label for="email">Correo electrónico:</label><br>
-      <input type="email" id="email" name="email"><br>
-      <label for="password">Contraseña:</label><br>
-      <input type="password" id="password" name="password"><br>
-      <label for="password-confirm">Confirmar contraseña:</label><br>
-      <input type="password" id="password-confirm" name="password-confirm"><br><br>
-      <button type="submit" onclick="register()">Registrarse</button>
-    </form> 
-  </section>
-
-  <!-- Slider de imágenes -->
-  <section id="slider">
-    <img src="imagen1.jpg" alt="Imagen 1" class="slide">
-    <img src="imagen2.jpg" alt="Imagen 2" class="slide">
-    <img src="imagen3.jpg" alt="Imagen 3" class="slide">
-  </section>
-  </body>
+  <!-- Slider -->
+  <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+      <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="img/slide1.jpg" class="d-block w-100" alt="Slide 1">
+      </div>
+      <div class="carousel-item">
+        <img src="img/slide2.jpg" class="d-block w-100" alt="Slide 2">
+      </div>
+      <div class="carousel-item">
+        <img src="img/slide3.jpg" class="d-block w-100" alt="Slide 3">
+      </div>
+    </div>
+    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Anterior</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Siguiente</span>
+    </a>
+  </div>
+  <!-- Contenido -->
+  <div class="container mt-5">
+    <h1 class="text-center mb-5">Bienvenidos a nuestra página informativa</h1>
+    <div class="row">
+      <div class="col-md-6">
+        <h2>¿Qué ofrecemos?</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam interdum, ipsum nec condimentum mollis, est purus efficitur felis, sed vehicula ipsum velit vel massa. Mauris finibus justo lacus, eget fermentum urna efficitur a. Proin efficitur justo at lectus luctus, et pretium est luctus. Suspendisse euismod mollis sapien, in vestibulum nisi. Quisque et odio ac nisl lobortis tempus. Donec auctor nulla quis lectus dignissim, et tristique dolor viverra. Vestibulum id ultricies dolor. Morbi placerat dignissim est vel tincidunt.</p>
+      </div>
+      <div class="col-md-6">
+        <h2>Nuestros cursos</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam interdum, ipsum nec condimentum mollis, est purus efficitur felis, sed vehicula ipsum velit vel massa. Mauris finibus
+  <div class="container mt-5">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="card">
+          <img src="img/curso1.jpg" class="card-img-top" alt="Curso 1">
+          <div class="card-body">
+            <h5 class="card-title">Curso 1</h5>
+            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam interdum, ipsum nec condimentum mollis, est purus efficitur felis, sed vehicula ipsum velit vel massa.</p>
+            <button class="btn btn-primary" data-toggle="modal" data-target="#modal-registro-curso1">Registrarse</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card">
+          <img src="img/curso2.jpg" class="card-img-top" alt="Curso 2">
+          <div class="card-body">
+            <h5 class="card-title">Curso 2</h5>
+            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam interdum, ipsum nec condimentum mollis, est purus efficitur felis, sed vehicula ipsum velit vel massa.</p>
+            <button class="btn btn-primary" data-toggle="modal" data-target="#modal-registro-curso2">Registrarse</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card">
+          <img src="img/curso3.jpg" class="card-img-top" alt="Curso 3">
+          <div class="card-body">
+            <h5 class="card-title">Curso 3</h5>
+            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam interdum, ipsum nec condimentum mollis, est purus efficitur felis, sed vehicula ipsum velit vel massa.</p>
+            <button class="btn btn-primary" data-toggle="modal" data-target="#modal-registro-curso3">Registrarse</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Galería -->
+  <div class="container mt-5">
+    <h2 class="text-center mb-5">Galería</h2>
+    <div class="row">
+  <div class="col-md-3">
+        <a href="img/galeria4.jpg" data-lightbox="galeria">
+          <img src="img/galeria4.jpg" class="img-fluid" alt="Imagen 4">
+        </a>
+      </div>
+      <div class="col-md-3">
+        <a href="img/galeria5.jpg" data-lightbox="galeria">
+          <img src="img/galeria5.jpg" class="img-fluid" alt="Imagen 5">
+        </a>
+      </div>
+      <div class="col-md-3">
+        <a href="img/galeria6.jpg" data-lightbox="galeria">
+          <img src="img/galeria6.jpg" class="img-fluid" alt="Imagen 6">
+        </a>
+      </div>
+    </div>
+  </div>
+  <!-- Modals -->
+  <!-- Modal registro -->
+  <div class="modal fade" id="modal-registro" tabindex="-1" role="dialog" aria-labelledby="modal-registro-label" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modal-registro-label">Registrarse</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <!-- Formulario de registro -->
+          <form id="form-registro">
+            <div class="form-group">
+              <label for="nombre">Nombre</label>
+              <input type="text" class="form-control" id="nombre" placeholder="Ingresa tu nombre">
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" class="form-control" id="email" placeholder="Ingresa tu email">
+            </div>
+            <div class="form-group">
+              <label for="password">Contraseña</label>
+              <input type="password" class="form-control" id="password" placeholder="Ingresa tu contraseña">
+            </div>
+            <button type="submit" class="btn btn-primary">Registrarse</button>
+          </form>
+          <!-- Mensaje de error -->
+          <div id="mensaje-error" class="alert alert-danger mt-3" style="display: none;">
+            <strong>Error:</strong> El email ya está en uso.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Modal login -->
+  <div class="modal fade" id="modal-login" tabindex="-1" role="dialog" aria-labelledby="modal-login-label" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modal-login-label">Iniciar sesión</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <!-- Formulario de login -->
+          <form id="form-login">
+            <div class="form-group">
+              <label for="email-login">Email</label>
+              <input type="email" class="form-control" id="email-login" placeholder="Ingresa tu email">
+            </div>
+            <div class="form-group">
+              <label for="password-login">Contraseña</label>
+              <input type="password" class="form-control" id="password-login" placeholder="Ingresa tu contraseña">
+            </div>
+            <button type="submit" class="btn btn-primary">Iniciar sesión</button>
+          </form>
+          <!-- Mensaje de error -->
+          <div id="mensaje-error-login" class="alert alert-danger mt-3" style="display: none;">
+            <strong>Error:</strong> El email o la contraseña son incorrectos.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Modal registro curso 1 -->
+  <div class="modal fade" id="modal-registro-curso1" tabindex="-1" role="dialog" aria-labelledby="modal-registro-curso1-label" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modal-registro-curso1-label">Registrarse en Curso 1</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <!-- Formulario de registro -->
+          <form id="form-registro-curso1">
+            <div class="form-group">
+              <label for="nombre-curso1">Nombre</label>
+              <input type="text" class="form-control" id="nombre-curso1" placeholder="
+  <!-- Modal registro curso 3 -->
+  <div class="modal fade" id="modal-registro-curso3" tabindex="-1" role="dialog" aria-labelledby="modal-registro-curso3-label" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modal-registro-curso3-label">Registrarse en Curso 3</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <!-- Formulario de registro -->
+          <form id="form-registro-curso3">
+            <div class="form-group">
+              <label for="nombre-curso3">Nombre</label>
+              <input type="text" class="form-control" id="nombre-curso3" placeholder="Ingresa tu nombre">
+            </div>
+            <div class="form-group">
+              <label for="email-curso3">Email</label>
+              <input type="email" class="form-control" id="email-curso3" placeholder="Ingresa tu email">
+            </div>
+            <button type="submit" class="btn btn-primary">Registrarse</button>
+          </form>
+          <!-- Mensaje de error -->
+          <div id="mensaje-error-curso3" class="alert alert-danger mt-3" style="display: none;">
+            <strong>Error:</strong> El email ya está en uso.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Footer -->
+  <footer class="bg-dark py-5 mt-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <h4 class="text-white mb-3">Información</h4>
+          <ul class="list-unstyled">
+            <li><a href="#" class="text-white">Acerca de nosotros</a></li>
+            <li><a href="#" class="text-white">Contacto</a></li>
+            <li><a href="#" class="text-white">Términos y condiciones</a></li>
+            <li><a href="#" class="text-white">Política de privacidad</a></li>
+          </ul>
+        </div>
+        <div class="col-md-4">
+          <h4 class="text-white mb-3">Síguenos</h4>
+          <ul class="list-unstyled">
+  <div class="col-md-4">
+          <h4 class="text-white mb-3">Mantente en contacto</h4>
+          <form>
+            <div class="form-group">
+              <label for="nombre-newsletter" class="text-white">Nombre</label>
+              <input type="text" class="form-control" id="nombre-newsletter">
+            </div>
+            <div class="form-group">
+              <label for="email-newsletter" class="text-white">Email</label>
+              <input type="email" class="form-control" id="email-newsletter">
+            </div>
+            <button type="submit" class="btn btn-primary">Suscribirse</button>
+          </form>
+        </div>
+      </div>
+      <div class="row mt-5">
+        <div class="col text-center">
+          <p class="text-white">Copyright &copy;2023 | Todos los derechos reservados</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.16.6/dist/umd/popper.min.js" integrity="sha384-Z3mE1l/RNCnxQf1KjJEuZW7VJhCQXQgFvxpUy+YKjnn6kp3qx3u6EZjKgZ4i4G4" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+  <!-- Lightbox -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.1/js/lightbox.min.js"></script>
+  <!-- Firebase -->
+  <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-auth.js"></script>
+</body>
 </html>
