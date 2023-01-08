@@ -99,6 +99,7 @@ formCurso3.addEventListener('submit', function (event) {
 var btnLogout = document.getElementById('btn-logout');
 btnLogout.addEventListener('click', function () {
   firebase.auth().
+}
 // Mostrar mensaje toast
 function showToast(mensaje) {
   var toast = document.getElementById('toast');
