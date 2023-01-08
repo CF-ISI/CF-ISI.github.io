@@ -48,7 +48,7 @@ formLogin.addEventListener('submit', function (event) {
 });
 
 // Registrarse en Curso 1
-var formCurso1 = document.getElementById('form-registro
+var formCurso1 = document.getElementById('form-registro')
 // Registrarse en Curso 2
 var formCurso2 = document.getElementById('form-registro-curso2');
 formCurso2.addEventListener('submit', function (event) {
