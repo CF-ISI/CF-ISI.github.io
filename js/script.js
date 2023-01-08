@@ -1,8 +1,3 @@
-import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
-
-// TODO: Replace the following with your app's Firebase project configuration
-// See: https://firebase.google.com/docs/web/learn-more#config-object
 const firebaseConfig = {
       apiKey: "AIzaSyDPTeimjklASDA0yq3xhlSsR7uKILrmOaE",
       authDomain: "cf-isi.firebaseapp.com",
