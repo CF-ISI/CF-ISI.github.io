@@ -1,21 +1,3 @@
-
-  // Your web app's Firebase configuration
-  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-  const firebaseConfig = {
-    apiKey: "AIzaSyDPTeimjklASDA0yq3xhlSsR7uKILrmOaE",
-    authDomain: "cf-isi.firebaseapp.com",
-    databaseURL: "https://cf-isi-default-rtdb.firebaseio.com",
-    projectId: "cf-isi",
-    storageBucket: "cf-isi.appspot.com",
-    messagingSenderId: "217700504031",
-    appId: "1:217700504031:web:4143186cd2110901e3b46a",
-    measurementId: "G-CYJVG0SHCS"
-  };
-
-  // Initialize Firebase
-  const app = initializeApp(firebaseConfig);
-  const analytics = getAnalytics(app);
-
 // Initialize Cloud Firestore and get a reference to the service
 const db = firebase.firestore();
 
