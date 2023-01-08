@@ -1,5 +1,5 @@
 // Initialize Cloud Firestore and get a reference to the service
-const db = firebase.firestore();
+/*const db = firebase.firestore();
 
 
 // Iniciar sesión
@@ -112,3 +112,4 @@ window.addEventListener('click', function (event) {
     document.getElementById('modal-anuncios').style.display = 'none';
   }
 });
+*/
