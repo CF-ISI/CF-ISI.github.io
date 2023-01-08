@@ -98,7 +98,7 @@ formCurso3.addEventListener('submit', function (event) {
 // Cerrar sesión
 var btnLogout = document.getElementById('btn-logout');
 btnLogout.addEventListener('click', function () {
-  firebase.auth().
+  firebase.auth();
 }
 // Mostrar mensaje toast
 function showToast(mensaje) {
