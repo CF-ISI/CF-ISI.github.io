@@ -1,4 +1,4 @@
-
+/*
 
 db.collection("users").add({
     first: "Ada",
@@ -13,7 +13,7 @@ db.collection("users").add({
 });
 
 
-
+*/
 
 // Initialize Cloud Firestore and get a reference to the service
 /*const db = firebase.firestore();
