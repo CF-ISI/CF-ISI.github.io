@@ -1,3 +1,19 @@
+import { collection, addDoc } from "firebase/firestore"; 
+
+try {
+  const docRef = await addDoc(collection(db, "cursos"), {
+    descripción: "Ada",
+    imagen: "Lovelace",
+    nombre: 1815
+  });
+  console.log("Document written with ID: ", docRef.id);
+} catch (e) {
+  console.error("Error adding document: ", e);
+}
+
+
+
+
 // Initialize Cloud Firestore and get a reference to the service
 /*const db = firebase.firestore();
 
