@@ -362,42 +362,29 @@
   <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
 <script type="module">
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js";
-  import { getFirestore, doc, getDoc, getDocs, collection } from "https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js";
-import firebase from 'firebase/app';
-import 'firebase/firestore';
-
-// TODO: Replace the following with your app's Firebase project configuration
-// See: https://firebase.google.com/docs/web/learn-more#config-object
-const firebaseConfig = {
-    apiKey: "AIzaSyDPTeimjklASDA0yq3xhlSsR7uKILrmOaE",
-    authDomain: "cf-isi.firebaseapp.com",
-    databaseURL: "https://cf-isi-default-rtdb.firebaseio.com",
-    projectId: "cf-isi",
-    storageBucket: "cf-isi.appspot.com",
-    messagingSenderId: "217700504031",
-    appId: "1:217700504031:web:4143186cd2110901e3b46a",
-    measurementId: "G-CYJVG0SHCS"
-};
+ import firebase from 'firebase/app';
+import 'firebase/database';
 
 // Initialize Firebase
+const firebaseConfig = {
+  apiKey: "AIzaSyDPTeimjklASDA0yq3xhlSsR7uKILrmOaE",
+  authDomain: "cf-isi.firebaseapp.com",
+  databaseURL: "https://cf-isi-default-rtdb.firebaseio.com",
+  projectId: "cf-isi",
+  storageBucket: "cf-isi.appspot.com",
+  messagingSenderId: "217700504031",
+  appId: "1:217700504031:web:4143186cd2110901e3b46a",
+  measurementId: "G-CYJVG0SHCS"
+};
+
 firebase.initializeApp(firebaseConfig);
 
+// Get a reference to the database
+const database = firebase.database();
 
-// Initialize Cloud Firestore and get a reference to the service
-const db = firebase.firestore();
-  
-  db.collection("users").add({
-    first: "Ada",
-    last: "Lovelace",
-    born: 1815
-})
-.then((docRef) => {
-    console.log("Document written with ID: ", docRef.id);
-})
-.catch((error) => {
-    console.error("Error adding document: ", error);
-});
+// Add data to the database
+const data = { descripción: 'JohnDoe', imagen: 'yes' , nombre: 'JS' };
+database.ref('cursos/idCurso1').set(data);
 </script>
   <!-- MiScript -->
   <script type="text/javascript" src="js/script.js"></script>
