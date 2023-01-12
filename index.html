@@ -361,7 +361,9 @@
   <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js">
+    
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js">
+let db = firebase.firestore();
 
 // Initialize Firebase
 const firebaseConfig = {
@@ -377,12 +379,23 @@ const firebaseConfig = {
 
 firebase.initializeApp(firebaseConfig);
 
+  /**/
+  const data = { descripción: 'JohnDoe', imagen: 'yes' , nombre: 'JS' };
+  getData();
+  function getData() {
+
+      db.collection(data).doc("cursos/idCurso1").get().then(snapshot =>{
+        if(snapshot.exists){
+          console.log(snapshot.data().nombre_atributo)
+        } 
+      })
+  }
 // Get a reference to the database
-const database = firebase.database();
+/*const database = firebase.database();
 
 // Add data to the database
-const data = { descripción: 'JohnDoe', imagen: 'yes' , nombre: 'JS' };
-database.ref('cursos/idCurso1').set(data);
+
+database.ref('cursos/idCurso1').set(data);*/
 </script>
   <!-- MiScript -->
   <script type="text/javascript" src="js/script.js"></script>
