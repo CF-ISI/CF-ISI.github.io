@@ -16,7 +16,7 @@
     import { initializeApp } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-app.js";
     import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-analytics.js";
     //import { initializeApp } from 'firebase/app';
-    //import { getFirestore, collection, getDocs } from 'firebase/firestore/lite';
+    import { getFirestore, collection, getDocs } from 'firebase/firestore/lite';
     // TODO: Add SDKs for Firebase products that you want to use
     // https://firebase.google.com/docs/web/setup#available-libraries
   
@@ -36,17 +36,7 @@
     const app = initializeApp(firebaseConfig);
     const analytics = getAnalytics(app);
 
-    /*const db = getFirestore(app);
-    async function getCities(db) {
-    const citiesCol = collection(db, 'registro');
-    const citySnapshot = await getDocs(citiesCol);
-    const cityList = citySnapshot.docs.map(doc => doc.data());
-    
-    return cityList;*/
-
-    
-
-      var db = app.firestore();
+    const db = getFirestore(app);
 
     console.log(db);
 
