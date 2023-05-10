@@ -40,7 +40,7 @@
 
     const db = getFirestore(app);
 
-    async function getCities(db) {
+    async function getCities() {
     const citiesCol = collection(db, 'registro');
     const citySnapshot = await getDocs(citiesCol);
     const cityList = citySnapshot.docs.map(doc => doc.data());
