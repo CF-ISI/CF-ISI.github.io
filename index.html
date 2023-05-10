@@ -44,10 +44,10 @@
     const citiesCol = collection(db, 'registro');
     const citySnapshot = await getDocs(citiesCol);
     const cityList = citySnapshot.docs.map(doc => doc.data());
-    console.log(cityList);
+    //console.log(cityList);
     return cityList;
     }
-    console.log(getCities(db));
+    
     
 
 
@@ -65,7 +65,7 @@
           <a class="nav-link" href="?modulo=inicio">Inicio</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="?modulo=estadisticas">Estadisticas</a>
+          <a class="nav-link" href="?modulo=estadisticas" >Estadisticas</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="?modulo=Galería">Galería</a>
