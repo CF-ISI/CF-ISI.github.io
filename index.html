@@ -40,7 +40,7 @@
 
     const db = getFirestore(app);
 
-    async function getCities() {
+  /*  async function getCities() {
     const citiesCol = collection(db, 'registro');
     const citySnapshot = await getDocs(citiesCol);
     const cityList = citySnapshot.docs.map(doc => doc.data());
@@ -50,9 +50,17 @@
     
     window.addEventListener('load', function() {
       console.log(getCities());
-});
+    });
+
+*/
 
 
+    var ref = db.ref("registro");
+		ref.on("value", function(snapshot) {
+			console.log(snapshot.val());
+		}, function (error) {
+			console.log("Error: " + error.code);
+		});
 
 
   </script>
