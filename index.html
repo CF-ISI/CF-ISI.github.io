@@ -54,7 +54,11 @@
 
 */
 
-import { collection, query, where, getDocs } from "firebase/firestore";
+//import { collection, query, where, getDocs } from "firebase/firestore";
+import { collection } from 'https://www.gstatic.com/firebasejs/9.21.0/firebase-collection.js'
+import { query } from 'https://www.gstatic.com/firebasejs/9.21.0/firebase-query.js'
+import { where } from 'https://www.gstatic.com/firebasejs/9.21.0/firebase-where.js'
+import { getDocs } from 'https://www.gstatic.com/firebasejs/9.21.0/firebase-Docs.js'
 
 const q = query(collection(db, "registro"));
 
