@@ -54,14 +54,15 @@
 
 */
 
+import { collection, query, where, getDocs } from "firebase/firestore";
 
-    var ref = db.ref("registro");
-		ref.on("value", function(snapshot) {
-			console.log(snapshot.val());
-		}, function (error) {
-			console.log("Error: " + error.code);
-		});
+const q = query(collection(db, "registro"));
 
+const querySnapshot = await getDocs(q);
+querySnapshot.forEach((doc) => {
+  // doc.data() is never undefined for query doc snapshots
+  console.log(doc.id, " => ", doc.data());
+});
 
   </script>
   <!-- Navbar -->
