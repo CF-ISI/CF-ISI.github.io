@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -44,7 +44,7 @@
     const citiesCol = collection(db, 'registro');
     const citySnapshot = await getDocs(citiesCol);
     const cityList = citySnapshot.docs.map(doc => doc.data());
-    //console.log(cityList);
+    console.log(cityList);
     return cityList;
     }
     
