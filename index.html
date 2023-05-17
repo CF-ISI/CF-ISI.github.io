@@ -6,66 +6,31 @@
   <title>Centro Federado de Ingenieria de Sistemas e Informatica - UNAMAD</title>
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+    <script src="Controller/menuController.js"></script>
   <link rel="shortcut icon" href="img/logo.ico">
-  <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-  <!-- CSS personalizado -->
   <link rel="stylesheet" href="css/estilos.css">
 </head>
 <body>
   <script>
-    
-// Follow this pattern to import other Firebase services
-// import { } from 'firebase/<service>';
-
-// TODO: Replace the following with your app's Firebase project configuration
-const firebaseConfig = {
-      apiKey: "AIzaSyDdzAcQ95slOXyDQc_fExQDs4Qz5_L9jAg",
-      authDomain: "cfisi-jcch1997.firebaseapp.com",
-      projectId: "cfisi-jcch1997",
-      storageBucket: "cfisi-jcch1997.appspot.com",
-      messagingSenderId: "832612484805",
-      appId: "1:832612484805:web:2709b0f589414c9a8752ac",
-      measurementId: "G-NV3XDGB1VK"
-};
-const defaultProject = firebase.initializeApp(firebaseConfig);
-console.log(defaultProject.name);
-
-// Use the shorthand notation to access the default project's Firebase services
-
-//const defaultFirestore = firebase.firestore();
-//console.log(defaultFirestore);
-
-
-
-
-
-
-  // Referencia a la colección en Firestore
-  var collectionRef = firebase.firestore().collection("registro");
-
-  // Obtener los documentos de la colección
-  collectionRef.get().then((querySnapshot) => {
-    querySnapshot.forEach((doc) => {
-      // Acceder a los datos de cada documento
-      var data = doc.data();
-
-      // Mostrar los datos en la consola o en el DOM
-      console.log(data); // Mostrar en la consola
-      // Puedes utilizar el DOM para mostrar los datos en tu página web
-      // Ejemplo: document.getElementById("elemento").innerHTML = data;
+  const firebaseConfig = {
+        apiKey: "AIzaSyDdzAcQ95slOXyDQc_fExQDs4Qz5_L9jAg",
+        authDomain: "cfisi-jcch1997.firebaseapp.com",
+        projectId: "cfisi-jcch1997",
+        storageBucket: "cfisi-jcch1997.appspot.com",
+        messagingSenderId: "832612484805",
+        appId: "1:832612484805:web:2709b0f589414c9a8752ac",
+        measurementId: "G-NV3XDGB1VK"
+  };
+  const defaultProject = firebase.initializeApp(firebaseConfig);
+    var collectionRef = firebase.firestore().collection("registro");
+    collectionRef.get().then((querySnapshot) => {
+      querySnapshot.forEach((doc) => {
+        var data = doc.data();
+        console.log(data);
+      });
     });
-  });
-
-
-
-
-
-
-
-
   </script>
-  
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <a class="navbar-brand" href="#">C.F.E.P.I.S.I UNAMAD</a>
@@ -75,13 +40,16 @@ console.log(defaultProject.name);
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item active">
-          <a class="nav-link" href="?modulo=inicio">Inicio</a>
+          <a class="nav-link" onclick="inicio()">Inicio</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="?modulo=estadisticas" >Estadisticas</a>
+          <a class="nav-link" onclick="estadistica()" >Estadisticas</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="?modulo=Galería">Galería</a>
+          <a class="nav-link" onclick="galeria()">Galería</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" onclick="concurso()">Concurso</a>
         </li>
       </ul>
       <ul class="navbar-nav ml-auto">
