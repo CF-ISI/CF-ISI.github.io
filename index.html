@@ -29,12 +29,12 @@ const firebaseConfig = {
       measurementId: "G-NV3XDGB1VK"
 };
 const defaultProject = firebase.initializeApp(firebaseConfig);
-console.log(defaultProject);
+console.log(defaultProject.name);
 
 // Use the shorthand notation to access the default project's Firebase services
 
 const defaultFirestore = firebase.firestore();
-
+console.log(defaultFirestore);
 
 
 
