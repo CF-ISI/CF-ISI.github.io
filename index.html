@@ -31,8 +31,6 @@ const firebaseConfig = {
 const defaultProject = firebase.initializeApp(firebaseConfig);
 console.log(defaultProject.name);
 
-console.log(otherProject.name);    // "otherProject"
-
 // Use the shorthand notation to access the default project's Firebase services
 const defaultStorage = firebase.storage();
 const defaultFirestore = firebase.firestore();
