@@ -20,7 +20,7 @@
 
 // TODO: Replace the following with your app's Firebase project configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyDdzAcQ95slOXyDQc_fExQDs4Qz5_L9jAg",
+      apiKey: "AIzaSyDdzAcQ95slOXyDQc_fExQDs4Qz5_L9jAg",
       authDomain: "cfisi-jcch1997.firebaseapp.com",
       projectId: "cfisi-jcch1997",
       storageBucket: "cfisi-jcch1997.appspot.com",
@@ -35,6 +35,32 @@ console.log(defaultProject.name);
 
 const defaultFirestore = firebase.firestore();
 console.log(defaultFirestore);
+
+
+
+
+
+
+  // Referencia a la colección en Firestore
+  var collectionRef = defaultFirestore.firestore().collection("registro");
+
+  // Obtener los documentos de la colección
+  collectionRef.get().then((querySnapshot) => {
+    querySnapshot.forEach((doc) => {
+      // Acceder a los datos de cada documento
+      var data = doc.data();
+
+      // Mostrar los datos en la consola o en el DOM
+      console.log(data); // Mostrar en la consola
+      // Puedes utilizar el DOM para mostrar los datos en tu página web
+      // Ejemplo: document.getElementById("elemento").innerHTML = data;
+    });
+  });
+
+
+
+
+
 
 
 
