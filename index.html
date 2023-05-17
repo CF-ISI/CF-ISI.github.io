@@ -33,8 +33,8 @@ console.log(defaultProject.name);
 
 // Use the shorthand notation to access the default project's Firebase services
 
-const defaultFirestore = firebase.firestore();
-console.log(defaultFirestore);
+//const defaultFirestore = firebase.firestore();
+//console.log(defaultFirestore);
 
 
 
@@ -42,7 +42,7 @@ console.log(defaultFirestore);
 
 
   // Referencia a la colección en Firestore
-  var collectionRef = defaultFirestore.firestore().collection("registro");
+  var collectionRef = firebase.firestore().collection("registro");
 
   // Obtener los documentos de la colección
   collectionRef.get().then((querySnapshot) => {
